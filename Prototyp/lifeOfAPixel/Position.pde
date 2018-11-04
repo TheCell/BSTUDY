@@ -1,18 +1,67 @@
 class Position
 {
-  private int x;
-  private int y;
-  private float angle;
-  private float maxTurnPerCall = 20.0f;
+  private float speed = 1.3;
+  private float currentAngle = 0.0;
+  private PVector currentPosition;
+  private PVector targetPosition;
+  private float maxTurnPerCall = QUARTER_PI / 16;
+  private boolean showVectors = false;
   
   public Position(int x, int y)
   {
-    this.x = x;
-    this.y = y;
-    this.angle = 0.0;
+    this.currentPosition = new PVector(x, y);
+    this.targetPosition = new PVector(width / 2, height /2);
   }
   
-  public void setPosition(int x, int y)
+  private void correctAngle()
+  {
+    PVector forwardVector = forwardVector();
+    PVector foodDirection = PVector.sub(this.targetPosition, this.currentPosition);
+    
+    forwardVector.mult(100.0);
+    
+    if (showVectors)
+    {
+      line(this.currentPosition.x, this.currentPosition.y, this.currentPosition.x + forwardVector.x, this.currentPosition.y + forwardVector.y);
+      line(this.currentPosition.x, this.currentPosition.y, this.targetPosition.x, this.targetPosition.y);
+    }
+    float radiantAngle = PVector.angleBetween(forwardVector, foodDirection);
+    println(radiantAngle);
+    
+    if (radiantAngle > maxTurnPerCall)
+    {
+      radiantAngle = maxTurnPerCall;
+    }
+    
+    if (radiantAngle > 0.01)
+    {
+      this.currentAngle = this.currentAngle + radiantAngle;
+    }
+  }
+  
+  public void moveTo(PVector targetPosition)
+  {
+    this.targetPosition = targetPosition;
+  }
+  
+  public void move()
+  {
+    correctAngle();
+    
+    PVector newPos = PVector.add(this.currentPosition, forwardVector());
+    this.setPosition(newPos.x, newPos.y);
+  }
+  
+  private PVector forwardVector()
+  {
+    PVector forwardVector = new PVector(1, 0);
+    forwardVector.rotate(this.currentAngle);
+    forwardVector.normalize();
+    forwardVector.mult(this.speed);
+    return forwardVector;
+  }
+  
+  private void setPosition(float x, float y)
   {
     if (x > width)
     {
@@ -32,7 +81,12 @@ class Position
       y = 0;
     }
     
-    this.x = x;
-    this.y = y;
+    currentPosition.x = x;
+    currentPosition.y = y;
+  }
+  
+  public PVector getPosition()
+  {
+    return this.currentPosition;
   }
 }
