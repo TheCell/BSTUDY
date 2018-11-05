@@ -7,6 +7,11 @@ class Position
   private float maxTurnPerCall = QUARTER_PI / 16;
   private boolean showVectors = false;
   
+  public Position()
+  {
+    this((int) random(0, width), (int) random(0, height));
+  }
+  
   public Position(int x, int y)
   {
     this.currentPosition = new PVector(x, y);
@@ -17,6 +22,7 @@ class Position
   {
     PVector forwardVector = forwardVector();
     PVector foodDirection = PVector.sub(this.targetPosition, this.currentPosition);
+    float angledirection = PVector.dot(forwardVector, foodDirection);
     
     forwardVector.mult(100.0);
     
@@ -26,7 +32,6 @@ class Position
       line(this.currentPosition.x, this.currentPosition.y, this.targetPosition.x, this.targetPosition.y);
     }
     float radiantAngle = PVector.angleBetween(forwardVector, foodDirection);
-    println(radiantAngle);
     
     if (radiantAngle > maxTurnPerCall)
     {

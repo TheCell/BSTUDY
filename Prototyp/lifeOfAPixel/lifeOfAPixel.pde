@@ -1,13 +1,14 @@
 PixelBrian briansLife;
 int counter = 0;
-PVector foodPosition;
+PixelFood pixelFood;
 int foodLife = 200;
 
 void setup()
 {
+  pixelDensity(2); // change this to resize the canvas on different displays
   size(800, 800);
   briansLife = new PixelBrian();
-  this.foodPosition = new PVector(random(0, width), random(0, height));
+  this.pixelFood = new PixelFood();
 }
 
 void draw()
@@ -31,14 +32,14 @@ void physicsStep()
 
 void setNewFoodPosition()
 {
-  this.foodPosition = new PVector(random(0, width), random(0, height));
-  briansLife.moveTo(foodPosition);
+  this.pixelFood.newPosition();
+  briansLife.moveTo(this.pixelFood.getPosition());
 }
 
 void drawFoodPosition()
 {
   fill(255);
   stroke(255);
-  PVector pos = this.foodPosition;
+  PVector pos = this.pixelFood.getPosition();
   ellipse(pos.x, pos.y, 8, 8);
 }
