@@ -2,6 +2,7 @@ class PixelBrian
 {
   private Position position;
   private int sizeInPixel = 16;
+  private PixelFood currentFoodGoal;
   
   PixelBrian()
   {
@@ -18,11 +19,29 @@ class PixelBrian
     this.position.moveTo(position);
   }
   
+  private void setFood(PixelFood pixelFood)
+  {
+    this.currentFoodGoal = pixelFood;
+    moveTo(pixelFood.getPosition());
+  }
+  
+  private void eatIfReachable()
+  {
+    
+  }
+  
+  public void generateNewFood()
+  {
+    this.currentFoodGoal = new PixelFood();
+    setFood(this.currentFoodGoal);
+  }
+  
   void draw()
   {
     fill(255);
     stroke(255);
     PVector pos = position.getPosition();
     ellipse(pos.x, pos.y, sizeInPixel, sizeInPixel);
+    currentFoodGoal.draw();
   }
 }
