@@ -38,8 +38,5 @@ void setNewFoodPosition()
 
 void drawFoodPosition()
 {
-  fill(255);
-  stroke(255);
-  PVector pos = this.pixelFood.getPosition();
-  ellipse(pos.x, pos.y, 8, 8);
+  this.pixelFood.draw();
 }
