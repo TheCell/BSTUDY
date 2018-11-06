@@ -24,5 +24,5 @@ void physicsStep()
   }
   counter = counter > foodLife ? 0 : counter + 1;
   
-  briansLife.move();
+  briansLife.logicStep();
 }

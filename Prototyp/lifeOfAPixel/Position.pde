@@ -1,10 +1,10 @@
 class Position
 {
-  private float speed = 1.3;
+  public float speed = 1.3;
   private float currentAngle = 0.0;
   private PVector currentPosition;
   private PVector targetPosition;
-  private float maxTurnPerCall = QUARTER_PI / 16;
+  public float maxTurnPerCall = QUARTER_PI / 16;
   private boolean showVectors = false;
   
   public Position()
