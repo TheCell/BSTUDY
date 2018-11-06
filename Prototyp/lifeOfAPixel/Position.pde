@@ -1,6 +1,6 @@
 class Position
 {
-  public float speed = 1.3;
+  public float speed = 3.3;
   private float currentAngle = 0.0;
   private PVector currentPosition;
   private PVector targetPosition;
