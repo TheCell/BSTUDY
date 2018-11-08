@@ -14,6 +14,7 @@ void draw()
   background(50);
   physicsStep();
   briansLife.draw();
+  drawExplanation();
 }
 
 void physicsStep()
@@ -25,4 +26,15 @@ void physicsStep()
   counter = counter > foodLife ? 0 : counter + 1;
   
   briansLife.logicStep();
+}
+
+void drawExplanation()
+{
+  textSize(24);
+  fill(#ebf441);
+  text("energy: speed +, fatness -", 10, 30);
+  fill(#4286f4);
+  text("water: turnspeed +, fatness -", 10, 60);
+  fill(#46f441);
+  text("food: speed -, fatness +", 10, 90);
 }

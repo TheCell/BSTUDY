@@ -94,4 +94,9 @@ class Position
   {
     return this.currentPosition;
   }
+  
+  public float currentAngle()
+  {
+    return this.currentAngle;
+  }
 }

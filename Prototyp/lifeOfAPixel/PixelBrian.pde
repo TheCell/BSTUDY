@@ -1,7 +1,7 @@
 class PixelBrian
 {
   private Position position;
-  private int sizeInPixel = 16;
+  private int sizeInPixel = 26;
   private PixelFood currentFoodGoal;
   private color briansColor = #FFFFFF;
   
