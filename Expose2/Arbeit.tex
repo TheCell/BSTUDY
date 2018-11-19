@@ -1,0 +1,168 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.7,vmarginratio={1:2},heightrounded]{geometry}
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\usepackage[numbers]{natbib}
+
+% link support in pdf
+\usepackage[colorlinks,allcolors=blue,breaklinks = true]{hyperref}
+
+% images in pdf
+\usepackage{graphicx}
+\graphicspath{{Images/}}
+% multiple images
+\usepackage{subfigure}
+% images float in text
+\usepackage{float}
+
+% url support
+\usepackage{url}
+% glossarie support
+\usepackage[acronym, automake]{glossaries}
+\makeglossaries
+\loadglsentries{myGlossary}
+
+% math libs
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+
+% Code formating
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%Metadata
+\title{TBD}
+\author{Simon Hischier}
+\date{April 2018}
+
+\begin{document}
+
+%Titlepage
+\begin{titlepage}
+%\maketitle
+\centering
+\vspace{1cm}
+	{\scshape\LARGE Hochschule Luzern HSLU \par}
+	\vspace{1cm}
+	{\scshape\Large Studiengang Digital Ideation, Bachelor \par}
+	
+	{\scshape\Large 5. Semester\par}
+	{\scshape\Large Exposé \par}
+	\vspace{1.5cm}
+	{\huge\bf Game Level generieren mit machine learning\par}
+	
+	\vspace{10cm}
+	{\Large Verfasser Simon Hischier\par}
+	{\Large Lehrkräfte Manuela Hummel, Florian Krautkrämer\par}
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+%First real page
+\begin{multicols}{2}
+[
+\section{Problemstellung}
+]
+Machine learning wird bei der Bildverarbeitung rege genutzt und findet in immer mehr Gebieten Anwendung. Obwohl Games sonst meist eine Vorreiterrolle für neue Technologie und Ideen einnehme, halten sie sich bisher beim Einsatz von machine learning zurück. Eine mögliche Erklärung ist etwa, dass machine learning für Spiele ein Problem darstellt: Grössere Neuronale Netze benötigen viel Rechenzeit und Leistung. Da Spiele die selben Resourcen auch benötigen, würde ein Neuronales Netz einen Teil der Leistung für sich beanspruchen. Des weiteren kann bei Prozeduralen Algorithmen das verhalten sehr genau definiert werden. Fehler lassen sich reproduzieren und damit einfacher reparieren. Neuronale Netze benötigen viele Beispieldaten damit sie lernen können. Diese Daten müssen erst generiert werden, aber wie? Wenn ein Netz dann trainiert ist kann man sein Verhalten nicht wie bei Prozeduralen Algorithmen über Werte ändern. Es muss es mit neuen Beispieldaten umlernen. Noch komplexer wird es bei der Fehlersuche: Wenn ein Netz das Verhalten eines Benutzers berücksichtigt, können Auftretende Fehler nicht so einfach reproduziert werden. Das selbe mehrere male erneut generieren lassen geht nur, wenn sich das Netz nicht ändert.
+\end{multicols}
+
+\begin{multicols}{2}
+[
+\section{Zielsetzung und Erkenntnisinteresse}
+]
+Ich möchte herausfinden, ob ein kleines Neuronales Netz Sinnvolle Levels für Spiele in Echtzeit generieren kann. Unter Sinnvoll gelten Level die passierbar sind und die nicht nach komplettem chaos aussehen.\linebreak
+
+Die Level-Generierung wird traditionell von Hand oder mit Prozeduralen Algorithmen gelöst, wobei prozedurale Methoden den Wiederspielwert erhöhen sollen. Bei Prozeduralen Algorithmen muss der exakte Levelaufbau wie es die Schöpferin oder der Schöpfer will weichen, weil man als Entwickler/in nur noch die Generierungsregeln aufstellt und nicht jedes Element selbst platziert. Selbst die Einflussmöglichkeit per Regeln wird bei Neuronalen Netzen dem Computer überlassen. Dies erschwert die Einflussnahme bei der Level-generierung deutlich. Wie kann einem Neuronalen Netz beigebracht werden, was interessante Level sind und wie diese generiert werden sollen.\linebreak
+
+Prozedurale Generierung kann sich nur bedingt der Spielenden Person anpassen, da die Algorithmen nur auf vorher von dem/der Entwickler/in festgelegte Parameter in vorgeschriebener weise reagieren kann. Neuronale Netze haben das Potenzial, das Verhalten der Spieler selbstständig zu lernen und individuell darauf zu reagieren. Es kann gestaltungsregeln für jeden Typ spieler individuell generieren und so einmalige Spielerlebnisse gestalten.
+\end{multicols}
+
+\section{Ziel der Arbeit}
+\begin{itemize}
+\item Ein Computerspiel erstellen, das mit hilfe eines Neuronalen Netzwerks Level generiert.
+\item Prüfen, ob ein kleines Neuronales Netz mit geringer Leistungsaufnahme für die Levelgestaltung ausreicht.
+\item Eine Methodik finden, wie einem Netzwerk das Levelgenerieren beigebracht werden kann.
+\item Aufzeigen von Möglichkeiten zur Einflussnahme der Levelgenerierung.
+\end{itemize}
+
+\begin{multicols}{2}
+[
+\section{Forschungsstand und theoretische Grundlage}
+]
+Smith\cite{Smith2010} et al. versuchen messbare Attribute von Leveln zu finden und definieren eine Methode um Level miteinander zu vergleichen. Sie nutzen dies um zu messen wie unterschiedlich die Level ihres Prozeduralen Level-Generators sind. Dies könnte nützlich sein um Schwachstellen oder lücken im ML Modell auf zu decken.\linebreak
+
+Smith\cite{Smith2011} et al. haben ein Spiel namens “Rathenn” erstellt. Dies wird zur Laufzeit generiert und der Spieler kann auf den Generator direkt einfluss nehmen und den Levelbau beeinflussen. Dafür haben sie Levelelemente mit Gegensätzen definiert und der Spieler kann dann durch 2 Aktionen einfluss nehmen. Der Spieler sammelt beim durchlauf farbige Münzen, die jeweils für ein Levelattribut stehen. Am Ende des Levels stehen leitern, diese werden dann anhand der meist gesammelten Münzen eingefärbt. Der Spieler kann sich nun für eine Leiter Entscheiden und in den nächsten Leveln werden dann die Attribute mehr verwendet, für die die Farbe steht.\linebreak
+
+Jennings-Teats\cite{Jennings-Teats2010} et al. beschreiben ein System zur einschätzung und generierung von Levels in diversen Schwierigkeitsstufen. Ihr Spiel “Polymorph” passt zur Laufzeit die Generierung dem/der Spieler/in an damit das Spiel fordernd bleibt und nicht zu frustrierend wird. Sie beschreiben dabei, wie verschiedene Levelelemente erst in Kombination auf ihre schwierigkeit bewertet werden können. Ein Neuronales Netz soll dabei helfen, die Level-Komposition an zu passen und nicht etwa wie bei bisherigen Prozeduralen Algorithmen nur die Attribute ändern.
+\end{multicols}
+
+\section{Methodik}
+\begin{itemize}
+\item Unity Projekt aufsetzen und geeignete Datenstruktur definieren.
+\item Messbare Level-Elemente definieren.
+\item Geeignete Struktur für ein Neuronales Netz evaluieren.
+\item Prototyp erstellen zum trainieren eines Neuronalen Netzes.
+\item Level generieren lassen und diese analysieren.
+\end{itemize}
+
+\section{Gliederung}
+\begin{itemize}
+\item Einleitung
+\item Definitionen
+\begin{itemize}
+\item Neuronales Netz
+\item Machine Learning
+\end{itemize}
+\item Kriterien und Vergleichsmetriken
+\begin{itemize}
+\item Einflussfaktoren
+\item Machine Learning
+\end{itemize}
+\item Aufbau des Netzes
+\item Diskussion \& Zukünftige Arbeit
+\item Schlussfolgerung
+\end{itemize}
+
+%\renewcommand{\refname}{myBibliography}
+\bibliography{myBibliography}
+%\bibliographystyle{unsrtnat}
+%\bibliographystyle{plainnat}
+\bibliographystyle{unsrt}
+%\bibliography{myBibliography}
+
+%list the figures and tables in contents
+%\addcontentsline{toc}{section}{\listfigurename}
+%\addcontentsline{toc}{section}{\listtablename}
+
+%\nocite{*}
+
+\end{document}
