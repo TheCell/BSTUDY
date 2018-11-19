@@ -76,7 +76,7 @@
 	{\scshape\Large 5. Semester\par}
 	{\scshape\Large Exposé \par}
 	\vspace{1.5cm}
-	{\huge\bf Game Level generieren mit machine learning\par}
+	{\huge\bf Der Zufall und die Artistische Vision\par}
 	
 	\vspace{10cm}
 	{\Large Verfasser Simon Hischier\par}
@@ -92,62 +92,58 @@
 [
 \section{Problemstellung}
 ]
-Machine learning wird bei der Bildverarbeitung rege genutzt und findet in immer mehr Gebieten Anwendung. Obwohl Games sonst meist eine Vorreiterrolle für neue Technologie und Ideen einnehme, halten sie sich bisher beim Einsatz von machine learning zurück. Eine mögliche Erklärung ist etwa, dass machine learning für Spiele ein Problem darstellt: Grössere Neuronale Netze benötigen viel Rechenzeit und Leistung. Da Spiele die selben Resourcen auch benötigen, würde ein Neuronales Netz einen Teil der Leistung für sich beanspruchen. Des weiteren kann bei Prozeduralen Algorithmen das verhalten sehr genau definiert werden. Fehler lassen sich reproduzieren und damit einfacher reparieren. Neuronale Netze benötigen viele Beispieldaten damit sie lernen können. Diese Daten müssen erst generiert werden, aber wie? Wenn ein Netz dann trainiert ist kann man sein Verhalten nicht wie bei Prozeduralen Algorithmen über Werte ändern. Es muss es mit neuen Beispieldaten umlernen. Noch komplexer wird es bei der Fehlersuche: Wenn ein Netz das Verhalten eines Benutzers berücksichtigt, können Auftretende Fehler nicht so einfach reproduziert werden. Das selbe mehrere male erneut generieren lassen geht nur, wenn sich das Netz nicht ändert.
+Der Zufall war bei den Arcade Spielen nötig, weil die Systeme noch stark beschränkte Speicherkapazität hatten. Die Spiele mussten einfach verständlich sein, spass machen und eine stets höher werdenden schwierigkeitsgrad aufweisen was schnell in Frust enden konnte. Als Systeme einzug ins Wohnzimmer fanden, wurde das verlangen nach Geschichten und neuen Spielgenres höher. Der Zufall wurde unbeliebt, mit den Arcadespielen in verbindung gesetzt und hat bis heute noch einen schlechten Ruf. Mittlerweile gibt es Spiele wie \textit{Binding of Isaac} (Edmund McMillen, Florian Himsl, 2011), \textit{Darkest Dungeon} (Red Hook Studios, 2016), \textit{Borderlands} (2K Games, 2009), \textit{Rogue Legacy} (Cellar Door Games, 2013), \textit{Spelunky} (Derek Yu, Mossmouth, LLC, 2008), \textit{Path of Exile} (Grinding Gear Games, 2013), \textit{Reigns} (Devolver Digital, 2016) etc. die den Zufall geschickt teils prominenter teils weniger prominent ins Spiel einbauen und den Zufall wieder Salonfähig machen. Gleichzeitig wird Zufall aber bei Spieleentwickler immer noch als Einschränkung für Designer betrachtet. Zufall gilt immernoch als beschneidung der artistische Vision. Spiele die Zufall enthalten werden oft mit schwacher Story assoziiert und mit Fokus des Spiels auf das gameplay verbunden.
 \end{multicols}
 
 \begin{multicols}{2}
 [
 \section{Zielsetzung und Erkenntnisinteresse}
 ]
-Ich möchte herausfinden, ob ein kleines Neuronales Netz Sinnvolle Levels für Spiele in Echtzeit generieren kann. Unter Sinnvoll gelten Level die passierbar sind und die nicht nach komplettem chaos aussehen.\linebreak
+Die Arbeit soll im wesentlichen Möglichkeiten aufzeigen, wie Spiele mit dem Zufall umgehen und wie ein Spiel trotz Zufall gut designed sein kann. Es soll zeigen, dass der Zufall nicht als Ersatz für Designer gedacht ist, sondern eine Erweiterung des Designer-repertoires darstellt. Gezeigt wird, dass es auch mit Zufall möglich ist Geschichten zu erzählen und bleibende Erinnerungen gestaltet werden können. Die Arbeit widmet sich dem erkennen, wo schwierigkeiten beim benutzen des Zufalls auftauchen und wo der Zufall geschickt in Spielen eingesetzt werden kann. Konkret “Wie kann beim designen eines Spiels der Zufall und die artistische Vision koexistieren?”
 
-Die Level-Generierung wird traditionell von Hand oder mit Prozeduralen Algorithmen gelöst, wobei prozedurale Methoden den Wiederspielwert erhöhen sollen. Bei Prozeduralen Algorithmen muss der exakte Levelaufbau wie es die Schöpferin oder der Schöpfer will weichen, weil man als Entwickler/in nur noch die Generierungsregeln aufstellt und nicht jedes Element selbst platziert. Selbst die Einflussmöglichkeit per Regeln wird bei Neuronalen Netzen dem Computer überlassen. Dies erschwert die Einflussnahme bei der Level-generierung deutlich. Wie kann einem Neuronalen Netz beigebracht werden, was interessante Level sind und wie diese generiert werden sollen.\linebreak
-
-Prozedurale Generierung kann sich nur bedingt der Spielenden Person anpassen, da die Algorithmen nur auf vorher von dem/der Entwickler/in festgelegte Parameter in vorgeschriebener weise reagieren kann. Neuronale Netze haben das Potenzial, das Verhalten der Spieler selbstständig zu lernen und individuell darauf zu reagieren. Es kann gestaltungsregeln für jeden Typ spieler individuell generieren und so einmalige Spielerlebnisse gestalten.
+Es soll die Möglichkeiten zeigen, wie man Zufall als Werkzeug benutzen kann. Aufzeigen, wo ein Einsatz von Zufall einen Mehrwert generiert und was damit bewirkt werden kann.
 \end{multicols}
 
 \section{Ziel der Arbeit}
 \begin{itemize}
-\item Ein Computerspiel erstellen, das mit hilfe eines Neuronalen Netzwerks Level generiert.
-\item Prüfen, ob ein kleines Neuronales Netz mit geringer Leistungsaufnahme für die Levelgestaltung ausreicht.
-\item Eine Methodik finden, wie einem Netzwerk das Levelgenerieren beigebracht werden kann.
-\item Aufzeigen von Möglichkeiten zur Einflussnahme der Levelgenerierung.
+\item Analyse, welche Reize der Zufall in Spielen bieten kann.
+\item Aufzeigen von Schwierigkeiten bei der Nutzung von Zufall.
+\end{itemize}
+
+\section{Forschungsstand und theoretische Grundlage}
+
+Es wurden bereits Unterteilungen definiert zum kategorisieren der Spiele anhand der ausprägung der Zufallsgeneration\cite{VanderLinden2014}.
+\begin{itemize}
+\item \textbf{Keine Generation} Ein mögliches Beispiel wäre \textit{Super Mario Bros.} (Nintendo, 1985) bei dem alles von Hand platziert, gezeichnet und animiert wurde. Herr Miyamoto erläutert dabei Details, auf die beim erstellen des Level 1-1 geachtet wurden.\cite{EurogamerMiyamotoInterview}.
+\item \textbf{Inhaltsgenerierung während der Spielerstellung} \textit{The Elder Scrolls Oblivion} (Bethesda Softworks, 2006) benutzte \gls{pcg} um die Welt zu erstellen und die Designer kurierten und änderten erst nach der generierung die Welt\cite{PCGamerCarterInterview}. Ein Beispiel für eine weitverbreitete \gls{pcg} Algorithmus Middleware für Spielestudios ist SpeedTree\cite{SpeedTree}.
+\item \textbf{Gameplay (teilweise) definiert oder beeinflusst} durch \gls{pcg} wie zum Beispiel die Nebenaufträge in \textit{The Elder Scrolls Skyrim} (Bethesda Softworks, 2011) welche immer wieder neu generiert wurden\cite{Bertz2011}. Auch die Schlösser in \textit{Rogue Legacy} (Cellar Door Games, 2013) werden jeweils neu generiert, dabei bleibt gibt es jedoch eine Art kontinuität die beim erneuten Spielen vorhanden bleibt\cite{Stanton2013}.
+\item \textbf{(Fast) vollständig generierte Spiele.} \textit{Dwarf Fortress} (Tarn Adams, 2006) hört nicht beim Levelgenerieren auf. Es startet beim erstellen einer kompletten Hintergrundgeschichte der Welt und allem was seit begin der Welt passiert ist\cite{Champandard2012}.
 \end{itemize}
 
 \begin{multicols}{2}
-[
-\section{Forschungsstand und theoretische Grundlage}
-]
-Smith\cite{Smith2010} et al. versuchen messbare Attribute von Leveln zu finden und definieren eine Methode um Level miteinander zu vergleichen. Sie nutzen dies um zu messen wie unterschiedlich die Level ihres Prozeduralen Level-Generators sind. Dies könnte nützlich sein um Schwachstellen oder lücken im ML Modell auf zu decken.\linebreak
+Komplexe Charaktere, ausgeklügelte Level und komplexe Stories werden mit starker “artistic vision” verbunden. Um diese Eigenschaften steuern zu können braucht der Artist detaillierte Kontrolle über alle Teile der Zufallsgenerierung. Van der Linden vermutet, dass intuitive und zugängliche Werkzeuge für Artisten dabei helfen könnte, die Zufallsgeneration wieder vermehrt in Spielen ein zu bauen\cite{VanderLinden2014}.
 
-Smith\cite{Smith2011} et al. haben ein Spiel namens “Rathenn” erstellt. Dies wird zur Laufzeit generiert und der Spieler kann auf den Generator direkt einfluss nehmen und den Levelbau beeinflussen. Dafür haben sie Levelelemente mit Gegensätzen definiert und der Spieler kann dann durch 2 Aktionen einfluss nehmen. Der Spieler sammelt beim durchlauf farbige Münzen, die jeweils für ein Levelattribut stehen. Am Ende des Levels stehen leitern, diese werden dann anhand der meist gesammelten Münzen eingefärbt. Der Spieler kann sich nun für eine Leiter Entscheiden und in den nächsten Leveln werden dann die Attribute mehr verwendet, für die die Farbe steht.\linebreak
-
-Jennings-Teats\cite{Jennings-Teats2010} et al. beschreiben ein System zur einschätzung und generierung von Levels in diversen Schwierigkeitsstufen. Ihr Spiel “Polymorph” passt zur Laufzeit die Generierung dem/der Spieler/in an damit das Spiel fordernd bleibt und nicht zu frustrierend wird. Sie beschreiben dabei, wie verschiedene Levelelemente erst in Kombination auf ihre schwierigkeit bewertet werden können. Ein Neuronales Netz soll dabei helfen, die Level-Komposition an zu passen und nicht etwa wie bei bisherigen Prozeduralen Algorithmen nur die Attribute ändern.
+Algorithmen, die dem Designer mehr kontrolle überlassen und trotzdem intuitiv bleiben gibt es schon und erste Spiele sind auf dem Markt erschienen. Als Beispiel kann hier “Bad North” genannt werden das den Algorithmus “Wave Function Collapse”\cite{Efros1999}\cite{Karth2017} geschickt ins Spiel integriert und der Author Oskar Stålberg kann dabei teile der Level genau vorgeben und den rest nach seinen Regeln zufällig ausfüllen lassen\cite{OskarStalberg2018}.
 \end{multicols}
 
 \section{Methodik}
 \begin{itemize}
-\item Unity Projekt aufsetzen und geeignete Datenstruktur definieren.
-\item Messbare Level-Elemente definieren.
-\item Geeignete Struktur für ein Neuronales Netz evaluieren.
-\item Prototyp erstellen zum trainieren eines Neuronalen Netzes.
-\item Level generieren lassen und diese analysieren.
+\item Literaturrecherche
+\item Analyse diverser Spiele
+\item Zusammenfassung von Entwicklerberichten
 \end{itemize}
 
 \section{Gliederung}
+
 \begin{itemize}
 \item Einleitung
 \item Definitionen
 \begin{itemize}
-\item Neuronales Netz
-\item Machine Learning
+\item Zufall / PCG
+\item artistische vision
 \end{itemize}
-\item Kriterien und Vergleichsmetriken
-\begin{itemize}
-\item Einflussfaktoren
-\item Machine Learning
-\end{itemize}
-\item Aufbau des Netzes
+\item Vorteile und Gefahren beim Einsatz von PCG
+\item Beispiel Zufall als Werkzeug
 \item Diskussion \& Zukünftige Arbeit
 \item Schlussfolgerung
 \end{itemize}
