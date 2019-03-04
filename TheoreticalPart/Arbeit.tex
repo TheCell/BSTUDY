@@ -4,8 +4,11 @@
 
 \usepackage{multicol}
 \setlength{\columnsep}{1cm}
-
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
 \usepackage[numbers]{natbib}
+
+\usepackage[strings]{underscore}
 
 % link support in pdf
 \usepackage[colorlinks,allcolors=blue,breaklinks = true]{hyperref}
@@ -82,10 +85,41 @@
 This work discusses the relation between the past lack of procedural content generation in the game industry with the recent uptake of procedural content generation in emerging tools for game developers and artists and the use of procedural content generation in the game industry. How is procedural content generation as part of games and as a developing tool changing so that it is gaining relevance in the games industry and related sectors? New tools and a more data-driven approach to procedural content generation in recent years has lead to a less noticeable but steady increase in usage across a number of disciplines and workfields and a shift in toolsets in the game industry. The paper observes and analyzes the trends and tries to explain the newfound interest through analogy, literature review, market and workflow analysis. We want to highlight what these new tools and approaches provide and what previous tools were missing and the conclusion why procedural content generation gains popularity again based on these changes.
 \end{multicols}
 
+\section{Introduction}
+\begin{multicols}{2}
+todo
+\end{multicols}
+
+\section{Problem/Research Question}
+\begin{multicols}{2}
+todo
+\end{multicols}
+
+\section{Literature Review}
+\begin{multicols}{2}
+todo
+\end{multicols}
+
+\section{Methodology and Results}
+\subsection{Categories of Procedural Generation}
+We are using \gls{pcg} categories based on the book “Procedural Generation in Game Design”\citep[p.~3]{Short:2017:PGG:3161477} where the following four categories are described.
+
+\begin{labeling}{categories}
+\item [Integral] The use of \gls{pcg} is part of the game design from the start. This games rely heavily on a working PCG and even core gameplay can be affected. Games such as \textit{Rogue} (A.I. Design, 1980) or a more modern game like \textit{Dwarf Fortress} (Dwarf Fortress, 2006) are using \gls{pcg} extensively and would not work without it. They need it to be the type of game they are. Changes to the project planning have vast implications on the codebase. These games are build around central algorithms and project changes will result in redrafting the algorithms.
+
+\item [Drafting Content] From a game design perspective this games do not rely on \gls{pcg} from the start. Game designers rely on PCG to generate initial drafts of game content such as the map or items. These drafts can be looked through by humans and are then handpicked. Some games use this method to generate a world which is then polished by humans. An example of generating and polishing is \textit{Skyrim} (Bethesda Game Studios, 2011) and a more recent and sophisticated example is \textit{Far Cry 5} (Ubisoft, 2018) where Carrier Étienne explains how the world was modified by humans but regenerated daily by his team\cite{Carrier2018}.
+
+\item [Modal] Some games are build with little or even without the use for \gls{pcg} and it gets added later on during development. Even after release PCG can be added in the form of an “infinity mode” or as procedural maps in \textit{Rust} (Facepunch Studios Ltd, 2013). While this type can add a lot or replay value to a game it is mostly used just for that and does not add innovative content to the game.
+
+\item [Segmented] A game build with segmented content including closed off areas where \gls{pcg} is used. The development can continue with or without these areas if the desired standard is not met by the algorithm. The term “areas” doesn’t need to be restricted to levels. It can include parts of the game such as procedural music, graphical effects or randomized elements. The game developers have at all times the possibility to revert to hand-generated content.
+
+\end{labeling}
 
 
-
-
+\section{Conclusion and Future Work}
+\begin{multicols}{2}
+todo
+\end{multicols}
 
 
 
@@ -210,7 +244,7 @@ stahp
 \subsubsection{and even more subs}
 haha oh god.
 
-\section{Referenzen und Akronyme}
+\section{References and acronyms}
 
 \printglossaries
 
