@@ -82,31 +82,28 @@
 \section{Abstract}
 \label{sec:abstract}
 \begin{multicols}{2}
-This work discusses the relation between the past lack of procedural content generation in the game industry with the recent uptake of procedural content generation in emerging tools for game developers and artists and the use of procedural content generation in the game industry. How is procedural content generation as part of games and as a developing tool changing so that it is gaining relevance in the games industry and related sectors? New tools and a more data-driven approach to procedural content generation in recent years has lead to a less noticeable but steady increase in usage across a number of disciplines and workfields and a shift in toolsets in the game industry. The paper observes and analyzes the trends and tries to explain the newfound interest through analogy, literature review, market and workflow analysis. We want to highlight what these new tools and approaches provide and what previous tools were missing and the conclusion why procedural content generation gains popularity again based on these changes.
+This work discusses the relation between the past lack of procedural content generation in the game industry with the recent uptake of procedural content generation in emerging tools for game developers and artists and the use of procedural content generation in the game industry. How is procedural content generation as part of games and as a developing tool changing so that it is gaining relevance in the games industry and related sectors? New tools and a more data-driven approach to procedural content generation in recent years has lead to a less noticeable but steady increase in usage across a number of disciplines and workfields and a shift in toolsets in the game industry. The paper observes and analyzes the trends and explains the newfound interest through analogy, literature review, market and workflow analysis. We highlight what these new tools and approaches provide and what previous tools were missing and the conclusion why procedural content generation gains popularity based on these changes.
 \end{multicols}
 
 \section{Introduction}\label{sec:Introduction}
 \begin{multicols}{2}
-The cost to make games seems to be on an exponential curve as Raph Koster states\cite{Koster2018}. He suggests among other things that game developers should focus a lot more on algorithmic and procedural approaches to keep the cost of games under control. On Quora, an online discussion forum, Steve Theodore gives an example on the time needed for assets in games. A model for the game Half-Life 1 took about 2 working weeks and a model 10 years later took him seven working weeks. Theodore states, that most extra time is spent on texturing, shading and animation\cite{Prinke2017}. Those are fields where \gls{pcg} has seen huge improvements.
+The cost to make games seems to be on an exponential curve as Raph Koster states. He suggests among other things that game developers should focus a lot more on algorithmic and procedural approaches to keep the cost of games under control\cite{Koster2018}. On Quora, an online discussion forum, Steve Theodore who worked on Half-Life and other games, gives an example on the time needed for assets in games. A character model for the game Half-Life 1 took about 2 working weeks and a model 10 years later for a different game took him seven working weeks. Theodore states, that most extra time is spent on texturing, shading and animation\cite{Prinke2017}. Those are fields where \gls{pcg} has seen huge improvements.
 
-Studios developing AAA games spend a lot more money on creating resources. In the paper “The Role of Semantics in Games and Simulations” Tim Tutenel and Farael Bidarra explain that studios have an ever-increasing pressure to create more models with more realistic looks and behaviour. Bigger, more realistic worlds is a trend in the AAA market. The big problem the gaming and simulation industry is facing is how the models for these worlds are made. Tim Tutenel et al. point out that the models get more complex but how they are made still resembles a high-tech variation on how handicrafts are made\cite{Tutenel2008}. Modern models are only improving in looks but not in semantics. Ultimately new 3D models in games differ mostly in vertex count and how they are rendered. Enhancing new models with additional semantics has the potential to greatly increase the production value of models. Worlds increase but the amount of time and money that a company can spend on game development is limited. Better tools and semantically enhanced models have the potential for rule based world generation where virtually every object is interactable. Games like \textit{The Legend of Zelda: Breath of the Wild} (Nintendo Entertainment Planning \& Development, 2017) show how a basic semantically enhanced world leads to an exponential increase in interactability and a more believable world. Samuel Rantaeskola\cite{Prinke2017} states that in the past systems were less powerful and therefore the limiting factor was optimization. Nowadays the content and increasing complexity of content is the big limitation. More people working on a project increases overhead and the more work on a project the less impact there is when a single person is added to a team.
+Studios developing AAA games spend a lot more money on creating resources. In the paper “The Role of Semantics in Games and Simulations” Tim Tutenel and Farael Bidarra explain that studios have an ever-increasing pressure to create more models with more realistic looks and behaviour. Bigger, more realistic worlds is a trend in the AAA market. The big problem the gaming and simulation industry is facing is how the models for these worlds are made. Tim Tutenel et al. point out that the models get more complex but how they are made still resembles a high-tech variation on how handicrafts are made\cite{Tutenel2008}. Modern models are only improving in looks but not in semantics. Wikipedia defines semantic as related to meaning, significant and to signify, to indicate. Ultimately new 3D models in games differ mostly in vertex count and how they are rendered. Enhancing new models with additional semantics has the potential to greatly increase the production value of models. Worlds increase but the amount of time and money that a company can spend on game development is limited. Better tools and semantically enhanced models have the potential for rule based world generation where virtually every object is interactable. Games like \textit{The Legend of Zelda: Breath of the Wild} (Nintendo Entertainment Planning \& Development, 2017) show how a basic semantically enhanced world leads to an exponential increase in interactability and a more believable world. Samuel Rantaeskola\cite{Prinke2017} states that in the past systems were less powerful and therefore the limiting factor was optimization. Nowadays the content and increasing complexity of content is the big limitation. More people working on a project increases overhead and the more work on a project the less impact there is when a single person is added to a team.
 
-Ever-increasing cost of development does come with side effects. A lot of big studios closed down or had massive layoffs over the past year \cite{Lahti2018, Schreier2019, Walker2019, Schreier2019a} and this seems to be a long term trend backed by older numbers\cite{Plunkett2012}. The race to higher costs leave midsize studios in an awkward position. They are too big to survive by creating small games but not big enough to compete with AAA games. Steve Theodore recalls seeing a lot of midsize studios closing down in the seattle area because they grew into big studios, went indie or died\cite{Prinke2017}.
+Ever-increasing cost of development does come with side effects. A lot of big studios closed down or had massive layoffs over the past year \cite{Lahti2018, Schreier2019, Walker2019, Schreier2019a} and this seems to be a long term trend backed by older numbers\cite{Plunkett2012}. The race to higher costs leave midsize studios in an awkward position. They are too big to survive by creating small games but not big enough to compete with AAA games. Steve Theodore recalls seeing a lot of midsize studios closing down in the seattle area because they grew into big studios, went indie or died\cite{Prinke2017}. As more AAA games get produced, studios not only compete against each other and have to overshadow their own previous work. A very promising route seems to be \gls{pcg}. An increasing number of industry software is incorporating \gls{pcg} into their products and it allows the artists to keep up with ever increasing demand for more output in the same time. We define \gls{pcg} as a way to generate (game) content through algorithms. It’s a way to automatically generate content and can greatly reduce the workload of artists.
 \end{multicols}
-
 \section{Problem/Research Question}
 \begin{multicols}{2}
-The computer, games industry is a rather collaborative and open industry. Knowledge and creative techniques are quickly shared and adapted in the different studios. However, the industry is very competitive. Games cost a lot of money and are produced over several years without earning a dollar during the development period. The spent money needs to be regained on release putting the studios under great pressure. Games are widely different and getting the development cost back is in no way guaranteed (reference needed). The fact that in developed countries game markets are close to saturation\cite{Koster2018} does not help. For game studios this results in increased competition with each other. As part of the entertainment industry, games try to have unique features which can be marketed as unique selling points. Each gameseries has its strengths and long running series try to vary the gameplay while keeping their core gameplay formula untouched if possible. Each studio is therefore developing unique workflows, engines, management strategies etc. allowing the studio to stand apart from other studios. This leads to several problems: Acquiring new talents costs a lot of money. The production pipeline in each studio is different. Every game engine needs data in different formats sometimes uniquely crafted just for the engine. Every new employee must learn how to produce content which meets the engines requirements. 
+The computer, games industry is a rather collaborative and open industry. Knowledge and creative techniques are quickly shared and adapted in the different studios. However, the industry is very competitive. Games cost a lot of money and are produced over several years without earning a dollar during the development period. The spent money needs to be regained on release putting the studios under great pressure. Games are widely different and getting the development cost back is in no way guaranteed. The fact that in developed countries the game markets are close to saturation\cite{Koster2018} does not help. For game studios this results in increased competition with each other. As part of the entertainment industry, games try to have unique features which can be marketed as unique selling points. Each gameseries has its strengths, long running series try to vary the gameplay while keeping their core gameplay formula untouched if possible. Each studio is therefore developing unique workflows, engines, management strategies etc. allowing the studio to stand apart from other studios. This leads to several problems: Acquiring new talents costs a lot of money. The production pipeline in each studio is different. Every game engine needs data in different formats sometimes uniquely crafted just for the engine. Every new employee must learn how to produce content which meets the engines requirements. 
 stitch together
-Standards for data is minimal because each engine needs unique data. Although Unity and Unreal Engine have streamlined the workflow for studios in some ways: Some rendering methods like physical based rendering become industry accepted (ref?). Most engines can use the same texture components like bump map, reflection map etc. But unique game aspects demand for unique data formats on top of these commonly shared data or need additional information. The demand for more content in the same timespan remains unsolved with or without common components too. Standardized engines did not solve the problem of limited content output\cite{Koster2018}.
+Standards for data is minimal because each engine needs unique data. Although Unity and Unreal Engine have helped streamline the workflow for studios in some ways: Some rendering pipelines like physical based rendering become widespread and used on many devices. There is a new 3D object data format called glTF2.0 to exchange 3D data with physical based rendering as the basis\cite{TheKhronosGroup}. Most engines can use the same texture components (basecolor, metallic, roughness). But unique game aspects demand for unique data formats on top of these commonly shared data or need additional information. The demand for more content in the same timespan remains unsolved with or without common components too. Standardized engines did not solve the problem of limited content output\cite{Koster2018}.
 
-Here we look at how emerging tools differ from traditional solutions. New tools are adapted into workflows slowly but steadily. As new third party tools get integrated, studios can massively profit from these new tools. Besides directly influencing productivity, these standardized tools independent from game engines have the potential to immensely reduce the time for new employees to be productive. These tools can be teached in schools. Cross domain tools greatly reduce the barrier for new talents to enter the gaming industry (REF?). The tool developers profit from a wider user base not just because of higher sales figures but more users will grow the community around those tools. A big community is vital to be productivity (REF?) as more questions are answered and creative people can rely on an increasing knowledge. With new tools and formats becoming standardized and tested, mainstream engines start to adapt these tools as proven by the adaption of the glTF 3D format\cite{Group2018}. Emerging tools such as Houdini, Substance Designer and Blender all integrate some level of \gls{pcg}. As pointed out in \autoref{sec:Introduction}, current 3D assets lack semantics. With \gls{pcg} becoming commonplace in tools, the work to include more information into content production is greatly reduced. As \gls{pcg} is a core part of this trend we ask the question: How is procedural content generation as part of games and as a developing tool changing so that it is gaining relevance in the games industry and related sectors? \gls{pcg} lets designers iterate on models for previous games and enhancing the data becomes easier. Maturing and tested formats reduce the complexity of the internal engine logic, outsourcing the read and writing of these formats to middleware converters.
+Here we look at how emerging tools differ from traditional solutions. New tools are adapted into workflows slowly but steadily. As new third party tools get integrated, studios can massively profit from these new tools. Besides directly influencing productivity, these standardized tools independent from game engines have the potential to immensely reduce the time for new employees to be productive. These tools can be teached in schools. Tools used in different domains greatly reduce the barrier for new talents to enter the gaming industry. The tool developers profit from a wider user base not just because of higher sales figures but more users will grow the community around those tools. A big community is increasing productivity as more questions are answered and creative people can rely on an increasing knowledge. With new tools and formats becoming standardized and tested, mainstream engines start to adapt these tools as proven by the adaption of the glTF2.0 3D format\cite{Group2018}. Emerging tools such as Houdini, Substance Designer and Blender all integrate some level of \gls{pcg}. As pointed out in \autoref{sec:Introduction}, current 3D assets lack semantics. With \gls{pcg} becoming commonplace in tools, the work to include more information into content production is greatly reduced. As \gls{pcg} is a core part of this trend we ask the question: How is procedural content generation as part of games and as a developing tool changing so that it is gaining relevance in the games industry and related sectors? \gls{pcg} lets designers iterate on models for previous games and enhancing the data becomes easier. Maturing and tested formats reduce the complexity of the internal engine logic, outsourcing the read and writing of these formats to middleware converters.
 \end{multicols}
 
-\section{Literature Review}
-\subsection{Categories of Procedural Generation}
+\section{Categories of Procedural Generation}
 We are using \gls{pcg} categories based on the book “Procedural Generation in Game Design”\citep[p.~3]{Short:2017:PGG:3161477} where the following four categories are described.
-
 \begin{labeling}{categories}\label{sec:categories}
 \item [Integral] The use of \gls{pcg} is part of the game design from the start. This games rely heavily on a working PCG and even core gameplay can be affected. Games such as \textit{Rogue} (A.I. Design, 1980) or a more modern game like \textit{Dwarf Fortress} (Dwarf Fortress, 2006) are using \gls{pcg} extensively and would not work without it. They need it to be the type of game they are. Changes to the project planning have vast implications on the codebase. These games are build around central algorithms and project changes will result in redrafting the algorithms.
 
@@ -116,8 +113,25 @@ We are using \gls{pcg} categories based on the book “Procedural Generation in 
 
 \item [Segmented] A game build with segmented content including closed off areas where \gls{pcg} is used. The development can continue with or without these areas if the desired standard is not met by the algorithm. The term “areas” doesn’t need to be restricted to levels. It can include parts of the game such as procedural music, graphical effects or randomized elements. The game developers have at all times the possibility to revert to hand-generated content.
 \end{labeling}
+\section{Tools for Procedural Content Generation}
+\begin{multicols}{2}
+At the Blender Conference Andrew Price tried to predict changes to the 3D industry in the next 5 to 10 years. A big point besides machine learning assistance becoming a standard is the adaption of procedural workflows becoming mainstream\cite{Price2018}. Price states that procedural texturing made by \textit{Substance Designer} (Allegorithmic) in combination with \textit{Substance Painter} (Allegorithmic) is saving big studios money in the range of hundreds of thousands of US Dollars.
+\end{multicols}
+\section{Procedural Stochastic Textures}
+\begin{multicols}{2}
+Textures is traditionally a big topic in game development. A lot of research went into textures because it’s a big part of modern rendering pipelines and reaches back to the early days of modern computer graphics. Games in the 80’s and 90’s had hard limits on disk space\cite{Ferrari2016} and designing games involved balancing storage space between program code, music and images. As an example on the limitation: Besides a single digital sample channel sounds on home consoles like the \gls{nes} were limited to hardware generated tones\cite{wiki:NintendoEntertainmentSystem}. Consoles like the \gls{nes} and \gls{snes} had no chips to calculate complex 3D objects. The Picture Processing unit was used to display only sprites. To fill a TV screen the \gls{nes} and \gls{snes} used texture tiling, a technique for creating small texture samples which can be tiled to create a seamless pattern. This technique is still in use for modern games with increased more complex textures and increased texture size. Games using \gls{pcg} as an integral part rely heavily on tileable textures or alternatively use generated procedural textures for example Perlin\cite{perlin1985image} or Worley\cite{worley1996cellular} noise. Those approaches come with disadvantages: Tiles are very repetitive and Perlin noise need very sophisticated algorithms to generate interesting levels. Another texture generating solution is using by-example noise algorithms. These algorithms take a stochastic example texture and generate larger versions out of it. Until now these were too slow for real time generation and therefore were only suitable for drafting content. A recent paper by Heitz and Neyret created an algorithm able to create stochastic textures on-the-fly\cite{Heitz2018}. This enables artists to build levels and getting direct feedback with final textures already applied during building. This technique even allows for algorithmic level generation while not using tile based textures. This is especially important because textures not based on tiles lead to hard edges and repeating patterns shown in \autoref{fig:procStocTexturing}.
+\end{multicols}
 
-\subsection{Rise of Scripting languages}
+\begin{figure}[H]
+   \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{proceduralStochasticTexturingInUnityExample.png}
+   \caption{Wood detail maps with albedo, normal and occlusion textures. Retrieved 11:50, March 9, 2019 from {https://blogs.unity3d.com/2019/02/14/procedural-stochastic-texturing-in-unity/}}
+   \label{fig:procStocTexturing}
+\end{figure}
+\section{WaveFunctionCollapse}
+\begin{multicols}{2}
+Creating completely new tools for \gls{pcg} is a huge time investment. Darren Grey writes, that using \gls{pcg} is a bad idea when there is a time restriction\citep[p.~6]{Short:2017:PGG:3161477}. If it is used as an integral part of the game design even more. As an alternative to this high risks we see procedural middleware or usable parts already developed by other companies. An example of a widely used \gls{pcg} algorithm middleware for game studios is SpeedTree\cite{SpeedTree}. The software generates trees for games in all forms and sizes. For a game studio this is a very small investment compared to writing their own tree generator (or even worse, handcrafting) just to fill the background of a scene. However, these kind of software middlewares are scares. Writing a tool inhouse comes with a lot of additional work. The software should not only generate content, it should be easily understandable, controlable and fast to allow the artists to experiment with it and put the tool to good use. The commercial lack of use of \gls{pcg} correlates with the lack of their control as Roland van der Linden assumes\cite{VanderLinden2014}. Easy to use and encouraging experimentation can lead to faster adaption \gls{pcg} techniques as Adam M. Smith shows\cite{Karth2017}. The algorithm called “WaveFunctionCollapse” described by Alexei A. Efros and Thomas K. Leung is very easy to use without programming knowledge\cite{Efros1999}. The algorithm needs an input texture and can generate infinitely large output textures. The underlying algorithm works out of the box and does not need tweaking to get great results. This datadriven algorithm can be adapted to 3 dimensional space. Oskar Stalberg explains how the worlds in the game \textit{Bad North} (Plausible Concept, 2018) are generated by using WaveFunctionCollapse. A more recent tech demo shows infinite city generation with interesting buildings made by only using around 100 building blocks\cite{Marian2019}.
+\end{multicols}
+\section{Rise of Scripting languages}
 \begin{multicols}{2}
 John K. Ousterhout wrote a paper\cite{Ousterhout1998} in 1998 where he analyzed the difference in use of system languages (C, C++, Java) and scripting languages (Python, Perl, Javascript). His analysis is important because in this paper we look at visual node systems (a part of the dataflow programming paradigm\cite{wiki:Dataflow}) as comparable to scripting languages in the sense that they are more easily understandable. He pointed out, that scripting languages are much better suited for casual programmers based on several reasons. One reason is the size of programs. Scripting languages need less lines of code to get the same work done. Higher-level languages need several months of learning to master where as scripting languages lead to results in hours. This is of great importance, it allows a team to hire technical artists who are quickly ready to work on projects. However both languages are required, they are complementary.\begin{quote}
 “Scripting languages assume that a collection of useful components already exists in other languages.”\citep[p.~2]{Ousterhout1998}
@@ -128,160 +142,18 @@ The limiting factor in larger adaptations are the power of computers. The paper 
 
 While \gls{vpl} can be used on the system-level, we are not specifically focused on system-level programming nor are we focused on scripting languages. We will use visual node system examples in both categories (system-level and Higher-level) to present current trending developments. Visual node systems combine features from \gls{vpl} like accessibility, ease-of-use etc. with features from scripting languages like needing less lines of code (here nodes). On top of that, node systems make it easier to reuse code and have great potential to easily include \gls{pcg} into various steps of the game production. In general node systems allow users to drag and drop logic or program blocks and have strictly defined inputs and outputs which can be connected between blocks. To elaborate on the potential of node systems we present 3 systems for various parts of the game development. 
 
-\subsubsection{Houdini (Side Effects Software Inc, https://www.sidefx.com/)}
+\subsection{Houdini (Side Effects Software Inc, https://www.sidefx.com/)}
 Houdini started out as PRISM (Omnibus) which was bought in 1987 by Side Effects Software and later used as the basis for Houdini. The core of this software has always been its procedural workflow. This strong focus on \gls{pcg} in combination with \gls{vpl} in form of a node system has been the core strength of the software\cite{Seymour2012}. SideFX CEO Kim Davidson in 2012 estimated that around 20\% of the sales including commercial and games comes from lighting and procedural modeling. In our procedural categorization \autoref{sec:categories}, the Houdini software in game development is mainly used in drafting content. In other words gamemodels can already have a lot more semantics in the production phase then what is used in the final game. Houdini originally was used for tv production and later expanded to various 3D sectors. With this expansion to meet requirements of various 3D pipelines, game studios started to adapt Houdini even in AAA studios as stated by Artists at Ubisoft\cite{Carrier2018}. The Houdini engine is already integrated into Unity and Unreal\cite{SideFXGamesupport}. The pricing model has an option for Indie developers which indicates that the company's target game audience is not only the AAA studios.
-\subsubsection{Unreal Engine Blueprint (Epic Games, https://docs.unrealengine.com/en-us/Engine/Blueprints/)}
+\subsection{Unreal Engine Blueprint (Epic Games, https://docs.unrealengine.com/en-us/Engine/Blueprints/)}
 Unreal is one of the most popular game engines to use and the first official release was in 1998. The License model changed drastically with new releases, it started out costing up to 350’000\$ in license cost and up to 7\% royalties\cite{Herz1999}. The newest Version has no upfront cost anymore making it more attractive for developers. The engine developer supported Unearlscripting, a classical scripting language, until Unreal Engine 4. They shipped the Unreal Engine 3 with Kismet which is a \gls{vpl} that started replacing UnrealScripting. The current iteration (Unreal Engine 4) replaced Kismet with the Blueprint system, a new \gls{vpl} version making it possible to create games only with the \gls{vpl}. The decision to kill UnrealScripting in favour of a fully \gls{vpl} was made by Tim Sweeny because the \gls{vpl} directly used the underlying C++ functions\cite{Wawro2017}. With the Blueprint system procedural elements can be easily integrated into a game for example with the object position node or allows developers to build elaborate \gls{pcg} systems. This allows for \gls{pcg} to easily be used in the categorie Segmented all the way to the categorie Integral as described in \autoref{sec:categories}. Blueprint allows the developers for rapid tweaking, which is important not just for \gls{pcg}. Alan Willard explains the Blueprint system cuts iteration times from 15 minutes to 30 seconds allowing developers to spend more time making a good game and not waiting for it to compile\cite{Totilo2012}. There is extensive cost savings with this system. The Blueprint system even allows for cross domain work as Willard explains: “I could say: I’m going to convert this pillar into a blueprint and add some sort of trap to it. It means I can really go in and start enhancing my world with interaction that just would not have been possible without a technical artist, a designer and a programmer and now any one of those three can do all of it, provided they have the assets handy.”\cite{Totilo2012}.
-\subsubsection{Unity Shader Graph (Unity, https://unity.com/shader-graph)}
+\subsection{Unity Shader Graph (Unity, https://unity.com/shader-graph)}
 Unity released the Shader Graph software with the release of the software version Unity 2018.1. Shader Graph is a new node based shader editor to create new custom shaders without having to write a line of code. The Graph handles all the code in the background and displays results in real time, which is very important not just for \gls{pcg} workflows. A great advancement in pushing the \gls{pcg} field forward is the Subgraph system and how the Graph is integrated. Many shaders can be build with only a screenshot of the Shader Graph. This means artists can start sharing shaders like they are images on the internet without providing additional code and instructions. The shared Graphs can then be implemented by artists new to shaders, bringing the barrier to entry down. At all times the system only allows the user to connect nodes that have the matching input and output. This failsafe and easy to use system allows for trial and error. Every node can display the intermediate step of what the output looks like which is great for debugging. Unity provides an API to write custom nodes. This is a great way for artists and programmers to work together, the programmer providing custom nodes which the artists then can use to create new effects. Artists can create complex systems which they can then pack into a subgraph, hiding complexity and making effects reusable across projects.
 \end{multicols}
-
-
-\section{Methodology and Results}
-\subsection{Textures}
-\begin{multicols}{2}
-Textures is traditionally a big topic in game development. A lot of research went into textures because it’s a big part of modern rendering pipelines and reaches back to the early days of modern computer graphics. Games in the 80’s and 90’s had hard limits on disk space\cite{Ferrari2016} and designing games involved balancing storage space between program code, music and images. As an example on the limitation: Besides a single digital sample channel sounds on home consoles like the \gls{nes} were limited to hardware generated tones\cite{wiki:NintendoEntertainmentSystem}. Consoles like the \gls{nes} and \gls{snes} had no chips to calculate complex 3D objects. The Picture Processing unit was used to display only sprites. To fill a TV screen the \gls{nes} and \gls{snes} used texture tiling, a technique for creating small texture samples which can be tiled to create a seamless pattern. This technique is still in use for modern games with increased more complex textures and increased texture size. Games using \gls{pcg} as an integral part rely heavily on tileable textures or alternatively use generated procedural textures for example Perlin\cite{perlin1985image} or Worley\cite{worley1996cellular} noise. Those approaches come with disadvantages: Tiles are very repetitive and Perlin noise need very sophisticated algorithms to generate interesting levels. Another texture generating solution is using by-example noise algorithms. These algorithms take a stochastic example texture and generate larger versions out of it. Until now these were too slow for real time generation and therefore were only suitable for drafting content. A recent paper by Heitz and Neyret created an algorithm able to create stochastic textures on-the-fly\cite{Heitz2018}. This enables artists to build levels and getting direct feedback with final textures already applied during building. This technique even allows for algorithmic level generation while not using tile based textures. This is especially important because textures not based on tiles lead to hard edges and repeating patterns shown in \autoref{fig:procStocTexturing}.
-\end{multicols}
-
-\begin{figure}[H]
-    \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{proceduralStochasticTexturingInUnityExample.png}
-    \caption{Wood detail maps with albedo, normal and occlusion textures. Retrieved 11:50, March 9, 2019 from {https://blogs.unity3d.com/2019/02/14/procedural-stochastic-texturing-in-unity/}}
-    \label{fig:procStocTexturing}
-\end{figure}
-
-
-\begin{multicols}{2}
-\subsection{WaveFunctionCollapse}
-Creating completely new tools for \gls{pcg} is a huge time investment. Darren Grey writes using \gls{pcg} is a bad idea when there is a time restriction\citep[p.~6]{Short:2017:PGG:3161477}. If it is used as an integral part of the game design even more. As an alternative to this high risks we see procedural middleware or usable parts already developed by other companies. An example of a widely used \gls{pcg} algorithm middleware for game studios is SpeedTree\cite{SpeedTree}. The software generates trees for games in all forms and sizes. For a game studio this is a very small investment compared to writing their own tree generator (or even worse, handcrafting) just to fill the background of a scene. However, these kind of software middlewares are scares. Writing a tool inhouse comes with a lot of additional work. The software should not only generate content, it should be easily understandable, controlable and fast to allow the artists to experiment with it and put the tool to good use. The commercial lack of use of \gls{pcg} correlates with the lack of their control as Roland van der Linden assumes\cite{VanderLinden2014}. Easy to use and encouraging experimentation can lead to faster adaption \gls{pcg} techniques as Adam M. Smith shows\cite{Karth2017}. The algorithm called “WaveFunctionCollapse” described by Alexei A. Efros and Thomas K. Leung is very easy to use without programming knowledge\cite{Efros1999}. The algorithm needs an input texture and can generate infinitely large output textures. The underlying algorithm works out of the box and does not need tweaking to get great results. This datadriven algorithm can be adapted to 3 dimensional space. Oskar Stalberg explains how the worlds in the game \textit{Bad North} (Plausible Concept, 2018) are generated by using WaveFunctionCollapse. A more recent tech demo shows infinite city generation with interesting buildings made by only using around 100 building blocks\cite{Marian2019}.
-\end{multicols}
-
-\subsection{Tools for Procedural Content Generation}
-At the Blender Conference Andrew Price tried to predict changes to the 3D industry in the next 5 to 10 years. A big point besides machine learning assistance becoming a standard is the adaption of procedural workflows becoming mainstream\cite{Price2018}. Price states that procedural texturing made by Substance Designer in combination with Substance Painter is saving big studios money in the range of hundreds of thousands of US Dollars.
 
 \section{Conclusion and Future Work}
 \begin{multicols}{2}
 todo
 \end{multicols}
-
-
-
-%
-%\section{EXAMPLE TEXTS}
-%from here on down are only examples
-%\section{Abstract}
-%\label{sec:abstractEx}
-%We can Cite \cite{wikipediaScriptingLanguage}, \cite{Iivari2008usabilityInCompanyOSS}, \cite{almarzouq2005open}, \cite{heiseonline2017limuxservus}, \cite{viorres2007major}, \cite{wikipediaScriptingLanguage} etc. If we want to have terms and shortcuts we can introduce them once: \gls{longGlsEx} and \gls{oss}. If we refer to \gls{longGlsEx} and \gls{oss} later it will only use the short version.
-%
-%\section{Various examples}
-%\subsection{crossreference}
-%If we want to reference previous sections like (\hyperref[sec:abstractEx]{Abstract}) we can do that with a label and a reference. It is possible to automatically reference Sections \autoref{sec:abstract}, Items \autoref{itm:ListAnItemOnce} (which is not working yet?) or Figures \autoref{fig:examplesOfImages} aswell.
-%\subsection{Examples of Images}
-%Images are possible aswell:
-%\begin{figure}[H]
-%	\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{example1.png}
-%	\caption{Thats me. Source: {https://thecell.eu/}}
-%	\label{fig:examplesOfImages}
-%\end{figure}
-%
-%and even multiple images are possible
-%
-%\begin{figure}[H]
-%	\centering
-%	\subfigure{\includegraphics[width=0.4\textwidth]{example1.png}}
-%	\subfigure{\includegraphics[width=0.4\textwidth]{example2.png}}
-%	\subfigure{\includegraphics[width=1\textwidth]{example3.png}}
-%	\caption{multiple images as an example}
-%	\caption{if needed to reference separate it's possible like this}
-%\end{figure}
-%
-%\subsection{Script code}
-%A simple codeblock is possible take a look at this:
-%\begin{lstlisting}
-%<script>
-%let aVar = "this is a JavaScript variable";
-%console.log(aVar);
-%</script>
-%\end{lstlisting}
-%
-%\subsection{Tables etc.}
-%\subsubsection{itemlist}
-%\textbf{Lists} can be made as following:
-%\begin{itemize}
-%\item List an item once
-%\item or twice
-%\item just add more if needed
-%\item sublists are possible aswell:
-%\begin{itemize}
-%\item List an item once \label{itm:ListAnItemOnce}
-%\item or twice
-%\item just add more if needed
-%\end{itemize}
-%\end{itemize}
-%
-%\subsubsection{more item examples}
-%\begin{itemize}
-%\item there are item lists
-%\item like this one
-%\end{itemize}
-%\begin{enumerate}
-%\item enumerations
-%\item as seen here
-%\end{enumerate}
-%\begin{description}
-%\item [Ant] and descriptions
-%\item [Elephant] like these two
-%\end{description}
-%
-%\subsubsection{Tables}
-%If you are looking for tables, here it is:
-%\begin{table}[H]
-%\centering
-%\begin{tabular}{ |c|c|c|c|c|c|c| }
-%\hline
-% & 1 & 2 & 3 & 4 & 5 & 6 \\
-%\hline
-%Dota 2 & 31 min & H & ++ & Z & $<$40\$ & Kosmetisch \\
-%\hline
-%PoE & $\infty$ & H & ++ & Z & $<$\$440 & Shoppunkte \\
-%\hline
-%The Witcher 3 & 48.5h & H \& C &  & Z & \$24 & AddOn \\
-%\hline
-%\end{tabular}
-%\caption{Statistik Spiellänge wurde erfasst von \texttt{https://howlongtobeat.com} und \texttt{http://steamspy.com/.}}
-%\label{table:1}
-%\end{table}
-%
-%\subsection{math}
-%\(
-%\forall x \in X, \quad \exists y \leq \epsilon 
-%\\
-%\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi
-%\\
-%\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
-%\\
-%n^{22}
-%\\
-%\frac{n!}{k!(n-k)!} = \binom{n}{k}
-%\\
-%p = \frac{h}{2\pi i}\frac{\mathrm d}{\mathrm d x}\Psi
-%\)
-%
-%\begin{multicols}{2}
-%[
-%\section{Multicolumns} All human things are subject to decay. And when fate summons, Monarchs must obey.
-%]
-%Hello, here is some text without a meaning.  This text should show what 
-%a printed text will look like at this place.
-%If you read this text, you will get no information.  Really?  Is there 
-%no information?  Is there...
-%More can be found here: \url{https://www.sharelatex.com/learn/Multiple_columns}
-%\end{multicols}
-%
-%\section{some sections habe}
-%\subsection{subsections}
-%stahp
-%\subsubsection{and even more subs}
-%haha oh god.
 
 \section{References and acronyms}
 
@@ -300,7 +172,7 @@ todo
 
 %print list
 \listoffigures
-\listoftables
+%\listoftables
 
 %\nocite{*}
 
