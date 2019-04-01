@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="12">
-    <document master="false" line="78" file="C:\Users\simon\Documents\GitHub\BSTUDY\TheoreticalPart\Arbeit.tex" bookmark2="0" bookmark1="0" bookmark3="0" hasfocus="false"/>
-    <document master="false" line="520" file="C:\Users\simon\Documents\GitHub\BSTUDY\TheoreticalPart\myBibliography.bib" bookmark2="0" bookmark1="0" bookmark3="0" hasfocus="false"/>
-    <document master="false" line="0" file="C:\Users\simon\Documents\GitHub\BSTUDY\TheoreticalPart\myGlossary.tex" bookmark2="0" bookmark1="0" bookmark3="0" hasfocus="false"/>
-    <document master="false" line="0" file="C:/Users/simon/Documents/GitHub/BSTUDY/TheoreticalPart/titlepage.tex" bookmark2="0" bookmark1="0" bookmark3="0" hasfocus="true"/>
+    <document master="false" bookmark1="0" bookmark3="0" line="72" hasfocus="true" bookmark2="0" file="C:\Users\simon\Documents\GitHub\BSTUDY\TheoreticalPart\Arbeit.tex"/>
+    <document master="false" bookmark1="0" bookmark3="0" line="327" hasfocus="false" bookmark2="0" file="C:\Users\simon\Documents\GitHub\BSTUDY\TheoreticalPart\myBibliography.bib"/>
+    <document master="false" bookmark1="0" bookmark3="0" line="0" hasfocus="false" bookmark2="0" file="C:\Users\simon\Documents\GitHub\BSTUDY\TheoreticalPart\myGlossary.tex"/>
+    <document master="false" bookmark1="0" bookmark3="0" line="13" hasfocus="false" bookmark2="0" file="C:/Users/simon/Documents/GitHub/BSTUDY/TheoreticalPart/titlepage.tex"/>
+    <document master="false" bookmark1="0" bookmark3="0" line="0" hasfocus="false" bookmark2="0" file="C:/Users/simon/Documents/GitHub/BSTUDY/TheoreticalPart/titlepageReal.tex"/>
 </TexmakerSession>
